@@ -1,0 +1,35 @@
+body{
+    margin:0;
+}
+#head-section{
+    width: 100%;
+    height: 80px;
+    /* text-align: center; */ 
+    background-color: rgba(41, 7, 7, 0.973);
+    z-index: -1;
+}
+#restaourant-name{
+    width: 30%;
+    height: 100%;
+    padding-left: 30px;
+    float: left;
+    color: lightblue;
+}
+#name{
+    cursor: pointer;
+}
+#menu{
+    width: 60%;
+    height: 100%;
+    /* padding: 13px; */
+    text-align: center;
+    float: right;
+    margin-top: 25px;
+    font-family: monospace;
+}
+#menu a{
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
