@@ -5,6 +5,8 @@ body {
 #container {
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -12,7 +14,6 @@ body {
   width: 150px;
   height: 150px;
   background-color:wheat;
-  margin: 5px;
   border: 1px solid white;
   text-align: center;
   padding-top: 10px;
