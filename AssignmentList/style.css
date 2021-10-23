@@ -32,5 +32,13 @@ a {
         0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 .box:hover a{
-    color: blue;
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  color: blue;
+  font-size: large;
+  font-weight: 800;
+}
+.box:hover dl{
+  display: none;
 }
