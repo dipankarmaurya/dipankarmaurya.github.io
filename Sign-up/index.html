@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign-In-Page</title>
+    <title>Sign-Up-Page</title>
     <style>
       body {
         padding: 0;
         margin: 0;
-        background-image: url("./bg.jpg");
+        background-image: url("../Sign-in/bg.jpg");
         background-size: cover;
       }
       #container {
@@ -86,28 +86,25 @@
   </head>
   <body>
     <div id="container">
-      <!-- headings  -->
-      <div id="heading"><h3>Log in with</h3></div>
-      <!-- logos for login  with google and facebook -->
-      <div id="logos">
-        <div class="logo" id="facebook">
-          <a href="www.facebook.com"
-            ><img src="./facebook-logo.png" alt=""
-          /></a>
-        </div>
-        <div class="logo" id="google">
-          <a href="www.google.com"><img src="./google-logo.png" alt="" /></a>
-        </div>
-      </div>
       <!-- form start here -->
+      <div id="heading"><h3>Sign-Up Here</h3></div>
       <div id="form-container">
       <form action="">
-        <label for="username" style="color: white;">Enter user name</label><br />
+        <label for="username" style="color: white;"> User Name</label><br />
         <input
           class="information"
           id="username"
           type="text"
           placeholder="User Name.."
+          required
+        />
+        <br /><br />
+        <label for="email" style="color: white;"> Email</label><br />
+        <input
+          class="information"
+          id="email"
+          type="email"
+          placeholder="Email.."
           required
         />
         <br /><br />
@@ -120,12 +117,18 @@
           required
         />
         <br /><br />
-        <input id="button" type="submit" value="Sign-in" />
+        <label for="password" style="color: white;">Conform Password</label><br />
+        <input
+          class="information"
+          id="password"
+          type="password"
+          placeholder="Conform Password.."
+          required
+        />
+        <br /><br />
+        <input id="button" type="submit" value="Sign-Up" />
       </form>
       </div>
-    </div>
-    <div style="position: absolute;bottom: 42px; left: 42%;">
-      <span>Don't have an account Sign-up here <a href="../Sign-up/index.html">Sign-Up</a> </span>
     </div>
   </body>
 </html>
