@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing-Page</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">
+         <!-- todo image  -->
+        <a href=""><img src="./image/logo.png" alt="geekster-logo"><span>Geekster</span></a> 
+      </div>
+      <div id="nav-bar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Course</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About us</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <!-- main content start here -->
+    <section id="main">
+      <!-- top educator section -->
+
+      <div id="geekster-educator">
+          <img src="./image/gikster-image.png" alt="image">
+      </div>
+
+      <!-- registration form here  -->
+      <div id="registration-form">
+          <div id="form-heading" style="text-align: center; background-color: white;
+          border-top-right-radius: 5px;
+          border-top-left-radius:5px ;
+          margin-top:-20px ;"><h3>Register Here</h3></div>
+        <form action="">
+          <div id="inputs">
+            <label for="name">Name</label><br />
+            <input
+              class="user-information"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name..."
+              required
+            /><br />
+            <br />
+            <label for="email">Email</label><br />
+            <input
+              class="user-information"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email.."
+              required
+            /><br />
+            <br />
+            <label for="contact">Phone No.</label><br />
+            <input
+              class="user-information"
+              type="number"
+              name="contact"
+              id="contact"
+              placeholder="Mobile Number.."
+              required
+            /><br />
+            <br />
+            <label for="password">Password</label><br />
+            <input
+              class="user-information"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your password..."
+              required
+            /><br />
+            <br />
+            <label for="confirm-password">Confirm Password</label><br />
+            <input
+              class="user-information"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Confirm password.."
+              required
+            /><br />
+            <br />
+          </div>
+          <div id="button">
+            <button type="submit">Register</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- footer start here -->
+    <div id="footer">
+        <div style="text-align: center; ">
+           <p style="color: white; padding-top:40px">
+            Copyright &copy; www.geekster.com. All rights reserved!
+           </p> 
+    </div>
+  </body>
+</html>
