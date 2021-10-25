@@ -15,7 +15,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex-direction: row;
+  flex-direction:row-reverse;
   flex-wrap: wrap;
 }
 .box {
