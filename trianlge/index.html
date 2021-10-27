@@ -11,11 +11,12 @@
         padding: 0;
       }
       #container {
-        width: 31vw;
-        height: 45vh;
+        /* width: 31vw; */
+        /* height: 45vh; */
         background-size: contain;
         margin-left: 30%;
         margin-top: 8%;
+        cursor: pointer;
       }
       .triangle {
         height: 0px;
@@ -39,8 +40,17 @@
         border-bottom-color: rgb(226, 26, 26);
         top: 17%;
       }
-      .triangle:hover {
+      #container:hover #upper-triangle{
         transform: scale(1.1);
+        border-bottom-color: #ff0000;
+      }
+      #container:hover #middle-triangle{
+        transform: scale(1.1);
+        border-bottom-color: #00ff00;
+      }
+      #container:hover #lower-triangle{
+        transform: scale(1.1);
+        border-bottom-color: #0000ff;
       }
     </style>
   </head>
