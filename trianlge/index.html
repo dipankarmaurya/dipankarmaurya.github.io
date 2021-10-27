@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triangle Tree</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        width: 31vw;
+        height: 45vh;
+        background-size: contain;
+        margin-left: 30%;
+        margin-top: 8%;
+      }
+      .triangle {
+        height: 0px;
+        width: 0px;
+        border: 80px solid transparent;
+        border-bottom-width: 80px;
+        border-bottom-style: solid;
+        position: absolute;
+      }
+      #upper-triangle {
+        border-bottom-color: rgb(126, 61, 61);
+        top: 5%;
+        z-index: 2;
+      }
+      #middle-triangle {
+        border-bottom-color: rgb(47, 122, 47);
+        top: 11%;
+        z-index: 1;
+      }
+      #lower-triangle {
+        border-bottom-color: rgb(226, 26, 26);
+        top: 17%;
+      }
+      .triangle:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="upper-triangle" class="triangle"></div>
+      <div id="middle-triangle" class="triangle"></div>
+      <div id="lower-triangle" class="triangle"></div>
+    </div>
+  </body>
+</html>
