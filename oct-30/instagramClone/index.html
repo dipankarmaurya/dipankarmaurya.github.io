@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .bodyWrapper{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            height: 80vh;
+            margin: auto;
+            /* border: 10px solid black; */
+        }
+        .nav-menu{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border: 1px solid blue;
+            width: 100%;
+        }
+        #img-logo{
+            margin-left: 10px;
+        }
+        .icons{
+            margin-right: 40px;
+              width: 60px;
+              height: 30px;
+              display: flex;
+              justify-content: space-between;
+        }
+        .stories{
+            width: 100%;
+            height: 90px;
+            display: flex;  
+            overflow-x: auto;
+           border:1px solid black;
+        }
+        .stories::-webkit-scrollbar {   
+             display: none;
+            }
+            .img-story img{
+                width: 100%;
+                height: 100%;
+            }
+        .img-story{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: blue;
+            margin: 10px;
+        }
+        .post-details{
+            width: 100%;
+            border: 1px solid brown;
+        }
+        .image-box{
+            height: 35vh;
+            border: 1px solid yellow;
+        }
+        .like-comment-share{
+            display: flex;
+    width: 92px;
+    justify-content: space-between;
+    border: 1px  solid green;
+}
+        
+    </style>
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous"
+  />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="bodyWrapper">
+        <div class="nav-menu">
+            <div id="img-logo"><img src="./img/logo.png" alt="Instagram"></div>
+            <div class="icons">
+                <span class="logo-icon"  ><i class="material-icons" style="font-size: 31px;">add_box</i></span>
+               <span class="logo-icon"> <i class="fab fa-facebook-messenger" style="font-size: 30px;"></i><span></span>
+            </div>
+        </div>
+        <div class="stories">
+            <img class="img-story"src="./img/story-img.jpg"" alt="image">
+            <img class="img-story"src="./img/story-img.jpg"" alt="image">
+            <img class="img-story"src="./img/story-img.jpg"" alt="image">
+            <img class="img-story"src="./img/story-img.jpg"" alt="image">
+            <img class="img-story"src="#" alt="image">
+            <img class="img-story"src="#" alt="image">
+            <img class="img-story"src="./img/story-img.jpg"" alt="image">
+            <img class="img-story"src="#" alt="image">
+            <img class="img-story"src="#" alt="image">
+            <img class="img-story"src="." alt="image">
+            <img class="img-story"src="#" alt="image">
+            <img class="img-story"src="#" alt="image">
+            <img class="img-story"src="#" alt="image">
+            <img src="./img/story-img.jpg" alt="">
+        </div>
+        <div class="post-details">
+            <img class="img-story" src="#" alt="">
+                <div style="margin-right: 10px; float: right; margin-top: 20px;"> <span class="logo-icon"  ><i class="material-icons" style="font-size: 31px;">more_vert</i></span></div>
+        </div>
+        <div class="image-box"></div>
+        <div class="post-action">
+            <div class="like-comment-share" style="float: left;">
+                    <img style="width: 26px;  height: 30px;" src="./img/heart-3511.png" alt="">
+                    <img style="width: 26px;  height: 26px;" src="./img/instagram-comment.png" alt="">
+                    <img style="width: 26px;  height: 26px;" src="./img/instagram-share.png" alt="">   
+            </div>
+            <div class="save-post" style="float: right;">
+                <span class="logo-icon"  ><i class="material-icons" style="font-size: 35px;">bookmark_border</i>
+            
+            </div>
+        </div>
+    </div>
+</body>
+</html>
