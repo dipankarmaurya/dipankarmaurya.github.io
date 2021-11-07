@@ -71,8 +71,10 @@
      
     <div id="wrapper">
         <div>
+            <form action="">
                 <input type="number" name="time" id="time">
-                <input type="button" id="set-time" value="set Time">      
+                <input type="submit" id="set-time" value="set Time"> 
+            </form>     
         </div>
         <div id="display"><p id="para">0</p></div>
         <button id="start">start</button>
@@ -86,10 +88,11 @@
          let setTime= document.getElementById('set-time');
          console.log(setTime);
          setTime.addEventListener('click',function(e){
-             e.preventDefault();
-             console.log("hellow")
+              e.preventDefault();
+            //  console.log("hellow")
              val = document.getElementById('time').value;
              para.innerHTML=val;
+             document.getElementById('time').value="";
          })
         
 
