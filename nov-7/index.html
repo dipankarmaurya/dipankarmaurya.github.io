@@ -11,6 +11,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        background-image: linear-gradient(rgb(92, 58, 184), red,black);
        }
        #wrapper{
            width: 250px;
@@ -84,7 +85,7 @@
     <script>
          let para = document.getElementById('para');
          let start= document.getElementById('start');
-         let countdown,val;
+         let countdown,val=0;
          let setTime= document.getElementById('set-time');
          console.log(setTime);
          setTime.addEventListener('click',function(e){
@@ -103,14 +104,18 @@
             clearInterval(countdown)
         }
          function move(){
-             val--;
-             para.innerHTML=val;
              if(val==0){
                  alert("time up");
                  clearInterval(countdown)
              }
+             val--;
+             para.innerHTML=val;
          }
          start.addEventListener('click',function(){   
+             if(val<=0){
+                 alert(`please set a valid time duration`);
+                 return;
+             }
             countdown = setInterval(move ,1000) ;
          })
     </script>
