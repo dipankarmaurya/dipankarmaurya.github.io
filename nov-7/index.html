@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown timer</title>
+    <style>
+       body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       #wrapper{
+           width: 250px;
+           height: 200px;
+           display: flex;
+           justify-content: space-evenly;
+           flex-wrap: wrap;
+           background-color: brown;
+       }
+       input{
+           width: 45%;
+           height: 40px;
+           font-size: 1.2em;
+           margin: 2px;
+           text-align: center;
+       }
+       #display{
+           width: 100%;
+           height: 60px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background-color: rgb(209, 209, 224);
+           font-weight: bold;
+           color: rgb(22, 2, 2);
+           font-size: 2em;
+           border-radius: 50%;
+       }
+       #start{
+          width: 45%;
+           height: 40px;
+           background-color:gray;
+           font-weight: bold;
+           font-size: 2em;
+           cursor: pointer;
+       }
+       #reset{
+           width: 45%;
+           height: 40px;
+           background-color:gray;
+           font-weight: bold;
+           font-size: 2em;
+           cursor: pointer;
+       }
+       button{
+           outline: none;
+           border: none;
+           box-shadow: 2px 2px 1px 1px black,
+                     -2px 2px 1px 1px black,
+                     2px -2px 1px 1px black,
+                     -2px -2px 2px 1px black
+           ;
+           border-radius: 5px;
+       }
+    </style>
+</head>
+<body>
+     
+    <div id="wrapper">
+        <div>
+                <input type="number" name="time" id="time">
+                <input type="button" id="set-time" value="set Time">      
+        </div>
+        <div id="display"><p id="para">0</p></div>
+        <button id="start">start</button>
+        <button id="reset" onclick="reset()">Reset</button>
+    </div>
+    
+    <script>
+         let para = document.getElementById('para');
+         let start= document.getElementById('start');
+         let countdown,val;
+         let setTime= document.getElementById('set-time');
+         console.log(setTime);
+         setTime.addEventListener('click',function(e){
+             e.preventDefault();
+             console.log("hellow")
+             val = document.getElementById('time').value;
+             para.innerHTML=val;
+         })
+        
+
+
+        function reset(){
+            val=0;
+            para.innerHTML=val;
+            clearInterval(countdown)
+        }
+         function move(){
+             val--;
+             para.innerHTML=val;
+             if(val==0){
+                 alert("time up");
+                 clearInterval(countdown)
+             }
+         }
+         start.addEventListener('click',function(){   
+            countdown = setInterval(move ,1000) ;
+         })
+    </script>
+</body>
+</html>
