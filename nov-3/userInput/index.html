@@ -6,25 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS prompt()</title>
     <style>
+      body{
+       background-image: linear-gradient(blue,red, yellow);
+      }
       h1 {
-        color: rgb(73, 27, 10);
+        color: rgb(70, 51, 179);
+        background-color: rgb(120,220,38);
+        padding: 20px;
+        font-family: monospace;
       }
       button {
-        padding: 10px;
+        margin-top: 15px;
+        padding: 20px;
         cursor: pointer;
+        font-size: 2em;
+        background-image: linear-gradient(green left,blue,red);
       }
     </style>
   </head>
   <body>
-      <h1> JavaScript prompt()</h1>
-      <button onclick="displayText()">Click Here </button>
-      <p id="text" style="color: violet; font-family: Arial, Helvetica, sans-serif; font-weight: bold;"></p>
+   <div style="text-align: center;"><h1> JavaScript prompt()</h1></div> 
+      
+     
+      <div style="height: 60vh; display: flex; justify-content: space-evenly;align-items: center; flex-direction: column;
+      box-shadow: 2px 0px 2px 5px black,
+                  -2px 0px 2px 5px black,
+      0px -2px 2px 2px black,
+      0px 2px 2px 2px black;
+      
+      ">
+         <!-- click button to take input from command prompt -->
+      <div id="click-button"> <button onclick="displayText()">Click Here to Take Input </button></div>
+
+      <!-- add marque to make floating text -->
+      <div id="display-box">
+        <!-- output box---- -->
+        <h2 style="margin-bottom: 3px;">Output</h2>
+      <marquee direction="down" width="350" height="200" behavior="alternate" style=" background-color: burlywood; border:1px  solid;margin-bottom: 5px; " >
+        <marquee behavior="alternate">
+          <p id="text" style="color: violet; font-family: Arial, Helvetica, sans-serif; font-weight: bold;font-size: 2em;" ></p>
+        </marquee>
+      </marquee>
+    </div>
+  </div>
+    <!-- </div>  -->
     <script>
+        document.getElementById('display-box').style.display="hidden";
+
       function displayText() {
         let input = prompt("Enter your text here");
-        if (input != null) {
-          document.getElementById("text").innerHTML = "Entered text is -->>>" + input;
+        if (input =="") {
+          document.getElementById("text").innerHTML =  "null";
         }
+        else{
+          document.getElementById("text").innerHTML =  input;
+        }
+        // document.getElementById('display-box').style.display="flex";
+        document.getElementById("click-button").style.display="none";
       }
     </script>
   </body>
