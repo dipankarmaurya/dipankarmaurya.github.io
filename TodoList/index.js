@@ -25,33 +25,91 @@ addTaskButton.addEventListener("click", function (e) {
         "</div>" +
             '<div class="delete-task"></div>';
         
-            //marking as done here  
-            div.firstChild.firstChild.addEventListener('click', function () {
-            div.firstChild.firstChild.style.backgroundColor = "grey";
+            //marking as done here 
+      let markAsDone = div.children[0].children[0];
+      console.log(markAsDone.done);
+            markAsDone.addEventListener('click', function () {
+            markAsDone.style.backgroundColor = "grey";
+              markAsDone.done = 'true';
+              if(parseInt(taskCount.innerHTML)>0)
+              taskCount.innerHTML = parseInt(taskCount.innerHTML) - 1;
+              console.log(markAsDone.done);
             div.style.textDecoration = "line-through";
             });
         
         //deleting task
         div.children[1].addEventListener('click', function () {
-            div.remove();
+          div.remove();
+          if(markAsDone.done!="true")
+          taskCount.innerHTML = parseInt(taskCount.innerHTML) - 1; 
           })
-        todoListConatiner.appendChild(div);
+      todoListConatiner.appendChild(div);
       taskCount.innerHTML = parseInt(taskCount.innerHTML) + 1; 
     }
     inputTask.value = "";
-     markTask = document.getElementsByClassName('first');
-     taskValue =document.getElementsByClassName('task-value');
-     deleteTask =document.getElementsByClassName('delete-task');
 });
 
-//Marking hardcoded task assignment as done 
-for (let i = 0; i < markTask.length; i++) {
-    console.log(markTask);
-    markTask[i].addEventListener('click', function () {
-        console.log(markTask[i]);
-        markTask[i].style.backgroundColor = "grey";
-        taskValue[i].style.textDecoration = "line-through";
-        console.log(taskValue[i]);
-        console.log(markTask)
-    })
-}
+// showing incompleted task
+let incomplete = document.getElementById('incomplete');
+incomplete.addEventListener('click', function () {
+  totalTask = document.getElementsByClassName("task");
+  for (let i = 0; i < totalTask.length; i++){
+    if (totalTask[i].children[0].children[0].done != "true") {
+      totalTask[i].style.display = "flex";
+    }
+    else {
+      totalTask[i].style.display = "none";
+    }
+  } 
+})
+// showing only completed task
+let completed = document.getElementById('completed');
+completed.addEventListener('click', function () {
+  totalTask = document.getElementsByClassName("task");
+  for (let i = 0; i < totalTask.length; i++){
+    if (totalTask[i].children[0].children[0].done != "true") {
+      totalTask[i].style.display = "none";
+     } else {
+      totalTask[i].style.display = "flex";
+      console.log("show-me",totalTask[i]);
+    
+     }
+  }
+  
+})
+//showing all
+let all = document.getElementById('all');
+all.addEventListener('click', function () {
+  totalTask = document.getElementsByClassName("task");
+  for (let i = 0; i < totalTask.length; i++){
+      totalTask[i].style.display = "flex";
+  } 
+})
+
+//marking all as done
+let markAll = document.getElementById('mark-all');
+markAll.addEventListener('click', function(){
+  totalTask = document.getElementsByClassName("task");
+  for (let i = 0; i < totalTask.length; i++){
+    totalTask[i].children[0].children[0].style.backgroundColor = "grey";
+    totalTask[i].children[0].children[0].done = 'true';
+    if(parseInt(taskCount.innerHTML)>0)
+    taskCount.innerHTML = parseInt(taskCount.innerHTML) - 1;
+   totalTask[i].children[0].children[1].style.textDecoration = "line-through";
+  }
+})
+
+
+// deleting completed task
+let removeCompleted = document.getElementById('remove-done-task');
+removeCompleted.addEventListener('click', function () {
+  totalTask = document.getElementsByClassName("task");
+  console.log(Array.isArray(totalTask));
+  for (let i = 0; i < totalTask.length; i++){
+    if (totalTask[i].children[0].children[0].done == "true") {
+       totalTask[i].remove();
+    }
+    console.log(i);
+  }
+  
+})
