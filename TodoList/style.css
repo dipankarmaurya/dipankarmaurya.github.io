@@ -1,0 +1,125 @@
+body{
+    margin: 0;
+    color: white;
+    background-color: lightgreen;
+    /* background-image: linear-gradient(black, grey); */
+}
+
+#bodyWrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+#container{
+    width: 300px;
+    height: 400px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-image: linear-gradient(grey, black);
+    box-shadow: 2px 0px 2px 2px rgb(80, 47, 47),
+    0px 2px 2px 2px rgb(116, 76, 76),
+    -2px 0px 2px 2px rgb(116, 75, 75),
+    0px -2px 2px 2px rgb(114, 75, 75)
+    ;
+    /* border: 1px solid black; */
+}
+#add-task{
+   width: 100%;
+   height: 40px; 
+   /* border: 1px solid black; */
+   margin-bottom: 5px;
+}
+#task-name{
+    width: 70%;
+    height: 2.9em;
+    font-size: 1em;
+    font-weight: 500;
+    margin-right: 10px;
+    outline: none;
+}
+#add-task-button{
+    width: 20%;
+    height: 80%;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#actions{
+    display: flex;
+    justify-content:space-between ;
+     padding: 10px;
+}
+#todoListsContainer{
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    overflow-x: scroll;
+    height: 28vh;
+    width: 100%;
+    margin-bottom: 10px;
+   
+}
+#todoListsContainer::-webkit-scrollbar {   
+    display: none;
+   }
+.task{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 2em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    margin: 1px;
+    border-bottom: 1px solid paleturquoise;
+}
+.task:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    box-shadow:
+    inset 0 -3em 3em rgba(0,0,0,0.1),
+          0 0  0 2px rgb(255,255,255),
+          0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+small{
+    color: lightblue;
+    cursor: pointer;
+}
+small:hover {
+    font-size: medium;
+}
+.mark-task{
+display: flex;
+flex-direction: row;
+justify-content: left;
+/* background-color: blue; */
+height: 100%;
+/* width: 65%; */
+}
+.first{
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 7px;
+}
+.delete-task{
+    width: 15%;
+    height: 100%;
+    display: none;
+    margin-right:2px ; 
+}
+.task:hover .delete-task{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./delete.png');
+    background-size: contain;
+    /* background-color: blue; */
+
+}
