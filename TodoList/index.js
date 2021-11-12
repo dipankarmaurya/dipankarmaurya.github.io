@@ -17,7 +17,7 @@ addTaskButton.addEventListener("click", function (e) {
         div.classList.add("task");
         div.innerHTML =
         '<div class="mark-task">' +
-        "<div class='first'></div>" +
+        "<div class='first' done='false'></div>" +
         "" +
         "<div  class='task-value'>" +
         inputTask.value +
@@ -31,6 +31,7 @@ addTaskButton.addEventListener("click", function (e) {
             markAsDone.addEventListener('click', function () {
             markAsDone.style.backgroundColor = "grey";
               markAsDone.done = 'true';
+              div.classList.add('compeleted')
               if(parseInt(taskCount.innerHTML)>0)
               taskCount.innerHTML = parseInt(taskCount.innerHTML) - 1;
               console.log(markAsDone.done);
@@ -91,6 +92,7 @@ let markAll = document.getElementById('mark-all');
 markAll.addEventListener('click', function(){
   totalTask = document.getElementsByClassName("task");
   for (let i = 0; i < totalTask.length; i++){
+    totalTask[i].classList.add('compeleted');
     totalTask[i].children[0].children[0].style.backgroundColor = "grey";
     totalTask[i].children[0].children[0].done = 'true';
     if(parseInt(taskCount.innerHTML)>0)
@@ -99,17 +101,13 @@ markAll.addEventListener('click', function(){
   }
 })
 
-
-// deleting completed task
+// deleting all completed task
 let removeCompleted = document.getElementById('remove-done-task');
-removeCompleted.addEventListener('click', function () {
-  totalTask = document.getElementsByClassName("task");
-  console.log(Array.isArray(totalTask));
-  for (let i = 0; i < totalTask.length; i++){
-    if (totalTask[i].children[0].children[0].done == "true") {
-       totalTask[i].remove();
-    }
-    console.log(i);
+removeCompleted.addEventListener('click',removeElementsByClass)
+
+function removeElementsByClass(){
+  var elements = document.getElementsByClassName("compeleted");
+  while(elements.length > 0){
+      elements[0].parentNode.removeChild(elements[0]);
   }
-  
-})
+}
