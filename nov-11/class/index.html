@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<p id="para" done="false">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, at! Repellendus, fuga recusandae. Repudiandae adipisci impedit quia quisquam dolor aspernatur?
+</p>
+<button onclick="changeMe()">click me to change</button>
+<script>
+function changeMe(){
+    let para = document.getElementById('para');
+    console.log('x');
+    console.log(para.done)
+    if(para.done!="true"){         para.innerText= "dom manipulation"
+         para.done="true";
+    }
+    else{
+        para.innerText="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, at! Repellendus, fuga recusandae. Repudiandae adipisci impedit quia quisquam dolor aspernatur?";
+        para.done="false";
+    }
+}
+
+</script>
+</body>
+</html>
