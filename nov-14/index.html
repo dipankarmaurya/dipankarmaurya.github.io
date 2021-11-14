@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+<style>
+   body{
+       background-color: rgb(240,244,247);
+   }
+    #bodyWrapper{
+        display: flex;
+        /* height: 100vh; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    h1{
+        color: rgb(203, 171, 119);
+        font-family:'Courier New', Courier, monospace ;
+    }
+    #heading{
+        margin-bottom: 60px;
+    }
+    .questionContainer{
+        padding: 20px;
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        box-shadow: 0px 0px 20px black;
+        margin: 40px;
+    }
+    .question span {
+        font-size: 1.4em;
+    }
+    .ans{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgb(203, 171, 119);
+        box-shadow: 0px 0px  20px  lawngreen; 
+        margin-left:20px ;
+    }
+    .ans span{
+        font-size:2.5em;
+        cursor: pointer;
+        color: rgb(203, 171, 119);
+        font-weight: 900;    
+    }
+    .show-ans{
+        width: 100%;
+        padding: 5px;
+    }
+</style>
+</head>
+<body>
+    <div id="bodyWrapper">
+        <div id="heading"><h1>General Question</h1></div>
+        <div id="queryContainer">
+            <div class="questionContainer">
+                <div class="question" ><span>Do you support former?</span></div>
+                <div class="ans" onclick="showAnsFirst()"done="false" ><span id="que1">+</span></div>
+            </div>
+            <div class="questionContainer">
+                <div class="question" id><span>Do you accept all credit card?</span></div>
+                <div class="ans"onclick="showAnsSecond()"done="false" ><span id="que2">+</span></div>
+                
+            </div>
+            <div class="questionContainer">
+                <div class="question"><span>Do you use organic ingredients?</span></div>
+                <div class="ans" onclick="showAnsThird()"done="false" ><span id="que3">+</span></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let questionContainer = document.getElementsByClassName('questionContainer')
+        console.log(questionContainer);
+        function showAnsFirst(){
+            if(questionContainer[0].children[1].done!="true"){
+            let div = document.createElement('div');
+            div.classList.toggle('show-ans');
+            div.innerHTML='<span> Family farmers need your support, now that large agribusiness dominates food production in the U.S. Small family farms have a hard time competing in the food marketplace. Buying directly from farmers gives them a better return for their produce and gives them a fighting chance in today</span>';
+            questionContainer[0].appendChild(div);
+            questionContainer[0].children[1].done="true";
+            document.getElementById('que1').innerText="-";
+
+            }
+            else{
+                questionContainer[0].children[2].remove();
+              questionContainer[0].children[1].done="false";
+              document.getElementById('que1').innerText="+";
+
+
+            }
+        }
+        function showAnsSecond(){
+            if(questionContainer[1].children[1].done!="true"){
+            let div = document.createElement('div');
+            div.classList.toggle('show-ans');
+            div.innerHTML='<span> Family farmers need your support, now that large agribusiness dominates food production in the U.S. Small family farms have a hard time competing in the food marketplace. Buying directly from farmers gives them a better return for their produce and gives them a fighting chance in today</span>';
+            questionContainer[1].appendChild(div);
+            questionContainer[1].children[1].done="true"
+            document.getElementById('que2').innerText="-";
+
+            }
+            else{
+                questionContainer[1].children[2].remove();
+                questionContainer[1].children[1].done="false"
+                document.getElementById('que2').innerText="+";
+
+            }
+        }
+        function showAnsThird(){
+            if(questionContainer[2].children[1].done!="true"){
+            let div = document.createElement('div');
+            div.classList.toggle('show-ans');
+            div.innerHTML='<span> Family farmers need your support, now that large agribusiness dominates food production in the U.S. Small family farms have a hard time competing in the food marketplace. Buying directly from farmers gives them a better return for their produce and gives them a fighting chance in today</span>';
+            questionContainer[2].appendChild(div);
+            questionContainer[2].children[1].done="true"
+            document.getElementById('que3').innerText="-";
+
+        }
+            else{
+                questionContainer[2].children[2].remove();
+                questionContainer[2].children[1].done="false"
+                document.getElementById('que3').innerText="+";
+
+            }
+        }
+
+    </script>
+</body>
+</html>
