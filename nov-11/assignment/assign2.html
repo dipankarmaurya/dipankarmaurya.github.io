@@ -9,7 +9,7 @@
         body{
             margin: 0;
             color: white;
-            background-color: brown;
+        background-color: green;
         }
         #bodyWrapper{
             display: flex;
@@ -63,6 +63,7 @@
 </head>
 <body>
     <div id="bodyWrapper">
+        <div ><h1 id="wishing">Kabir Sir !!!</h1></div>
      <div id="greetings">  
        <div class="box" onclick="makeRed()" ><span><b id="good-morning">Good Morning</b></span></div>
        <div class="box" onclick="makeBrown()"><span> <b id="good-afternoon">Good afternoon</b> </span></div>
@@ -72,20 +73,32 @@
    </div>
 
    <script>
+       let wishing = document.getElementById('wishing');
        function makeRed(){
            document.getElementById('good-morning').style.color="red";
+        wishing.innerText="Good Morning Kabir Sir !!!";
+        wishing.style.color="red";
+
        }
        function makeBrown(){
            document.getElementById('good-afternoon').style.color="brown";
+           wishing.innerText="Good Afternoon Kabir Sir !!!"
+           wishing.style.color="brown";
+
        }
        function makeOrange(){
            document.getElementById('good-evening').style.color="orange";
+           wishing.innerText="Good Evening Kabir Sir !!!";
+           wishing.style.color="orange";
        }
        function makeNormal(){
            let greetings = document.getElementsByClassName('box');
            for(let i=0;i<greetings.length;i++){
                greetings[i].children[0].children[0].style.color="white";
            }
+           wishing.innerText="Kabir Sir !!!"
+           wishing.style.color="white";
+           
        }
    </script>
 </body>
