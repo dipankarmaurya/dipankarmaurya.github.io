@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll</title>
+    <style>
+        body{
+            background-color: cyan;
+        }
+        #bodyWrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .poll-box{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 400px;
+            height: 80px;
+            margin: 20px;
+            border: 2px solid black;
+            border-radius: 2em;
+            cursor: pointer;
+        }
+        .poll-box:hover{
+            transform:scale(1.01);
+        }
+        .title{
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .value{
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center; background-color: blue; color: white;"><h1 style="padding: 10px;">What you like most?</h1></div>
+    <div id="bodyWrapper">
+        <div class="poll-box">
+            <div class="title"></div>
+            <div class="value"></div>
+        </div>
+        <div class="poll-box">
+            <div class="title"></div>
+            <div class="value"></div>
+        </div>
+        <div class="poll-box">
+            <div class="title"></div>
+            <div class="value"></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
