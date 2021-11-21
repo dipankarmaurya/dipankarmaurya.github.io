@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipcart</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- header section of page -->
+    <header id="header">
+        <div id="left-header">
+        <!-- search section and flipcart logo -->
+        <img src="./object/flipkart-plus_8d85f4.png" alt="">
+        <input type="text" placeholder="Search for products, brand and more">
+        <!-- search logo -->
+        <span style="margin-left: -41px; font-size: 44px;color: gray;" class="material-icons">
+            search
+            </span>
+    </div>
+       <!-- for login signup and more -->
+        <div id="right-header" >
+            <!-- sign in -->
+           <a href=""><span>Dipankar</span></a>
+            <!-- more -->
+           <a href=""><span>More</span></a>
+           <div style="display: flex; justify-content: space-around; align-items: center;">
+           <a href=""><i style="font-size:40px ;" class="material-icons md-18">shopping_cart</i></a>
+           <a href=""><span style="margin-bottom:10px; line-height: 0;" >Cart</span></a>
+        </div>
+            
+        </div>
+    </header>
+    <!-- navigation section -->
+    <nav id="nav">
+        <div class="nav-items">
+            <img src="./object/nav-1.png" alt="">
+            <a href="">Top Offers</a>
+        </div>
+        <div class="nav-items">
+            <img src="./object/nav-2.png" alt="">
+            <a href="">Grocerry</a>
+        </div>
+        <div class="nav-items">
+            <img src="./object/nav-3.png" alt="">
+            <a href="">Mobiles</a>
+        </div>
+        <div class="nav-items">
+            <img src="./object/nav-4.png" alt="">
+            <a href="">Fashion</a>
+        </div>
+        <div class="nav-items">
+            <img src="./object/nav-5.png" alt="">
+            <a href="">Electronics</a>
+        </div>
+        <div class="nav-items">
+            <img src="./object/nav-6.jpg" alt="">
+            <a href="">Home</a>
+        </div>
+        <div class="nav-items">
+            <img src="./object/nav-7.png" alt="">
+            <a href="">Appliances</a>
+
+        </div>
+        <div class="nav-items">
+            <img src="./object/nav-9.png" alt="">
+            <a href="">Travel</a>
+        </div>
+        <div class="nav-items">
+            <img src="./object/nav-8.png" alt="">
+            <a href="">Beauty, Toys & More</a>
+        </div>
+    </nav>
+    <!-- image section  -->
+       <div id="main-image">
+           <img src="./object/main-img-2.webp" alt="">
+       </div>
+
+       <!-- deals of the day -->
+       <div id="deals-heading">
+           <div style="display: flex; justify-content: center; align-items: center;">
+            <h3 style="margin-left: 20px; padding: 10px;">Deals of The Day </h3>
+            <span class="material-icons">
+                av_timer
+                </span>
+                <span style="color: gray;">19:13:02 Left</span>
+           </div>
+           
+            <button style="width: 8%; height: 80%; background-color: blue; color: white;
+            font-size: 1.2em; margin-right: 20px; padding: 3px;">View All</button>
+       </div >
+       <!-- showing deals of the day image -->
+       <div id="deals-image">
+           <div class="image-box">
+            <img src="./object/delasImage/1.jpeg" alt="">
+            <span style="padding: 5px;">Home Temple</span>
+            <span style="color: rgb(143,142 , 87); padding: 5px;">Under ₹ 699</span>
+           </div>
+           <div class="image-box">
+            <img src="./object/delasImage/2.jpeg" alt="">
+            <span style="padding: 5px;">Home Temple</span>
+            <span style="color: rgb(143,142 , 87); padding: 5px;">Under ₹ 699</span>
+           </div>
+           <div class="image-box">
+            <img src="./object/delasImage/3.jpeg" alt="">
+            <span style="padding: 5px;">Home Temple</span>
+            <span style="color: rgb(143,142 , 87); padding: 5px;">Under ₹ 699</span>
+           </div>
+           <div class="image-box">
+            <img src="./object/delasImage/4.jpeg" alt="">
+            <span style="padding: 5px;">Home Temple</span>
+            <span style="color: rgb(143,142 , 87); padding: 5px;">Under ₹ 699</span>
+           </div>
+           <div class="image-box">
+            <img src="./object/delasImage/5.jpeg" alt="">
+            <span style="padding: 5px;">Home Temple</span>
+            <span style="color: rgb(143,142 , 87); padding: 5px;">Under ₹ 699</span>
+           </div>
+       </div>
+       <footer>
+
+       </footer>
+       <script>
+           let arr=["./object/main-img.jpg","./object/main-img-2.jpg","./object/main-img-2.webp","./object/main-img-5.webp"]
+           let mainImage = document.getElementById('main-image');
+           let i=0;
+          function show(){
+               if(i>=arr.length){
+                 i%=arr.length;
+               }
+               mainImage.children[0].src=arr[i];
+               i++;
+           }
+           setInterval(show,2000);
+       </script>
+</body>
+</html>
