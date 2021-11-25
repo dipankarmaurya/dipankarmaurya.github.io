@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO list</title>
+    <style>
+       #add-task{
+           margin-left: 500px;
+           margin-top: 100px;
+           width: 300px;
+           height: 100px;
+           text-align: center;
+           box-shadow: 0px 0px 10px black;
+           padding-top: 40px;
+
+       }
+       #add-task input{
+           height: 40px;
+           font-size: 1em;
+       }
+       #add-task button{
+           margin-top: 15px;
+           height: 30px;
+           width: 100px;
+           font-size: 1em;
+           cursor: pointer;
+           font-weight: bold;
+       }
+       
+     p button{
+         margin-left: 30px;
+         padding: 5px;
+         font-size: 1em;
+         box-shadow: 0px 0px 10px black;
+     }
+     span{
+         font-size: 2em;
+         font-family: monospace;
+     }
+     #task-container{
+         text-align: center;
+     }
+    </style>
+  </head>
+  <body>
+    <div id="add-task">
+      <input type="text" required  id="input_task" placeholder="Enter your task here*"/><br>
+      <button id="add">Add Task</button>
+    </div>
+    <div id="task-container">
+      <!-- <span class="task">hellow</span> -->
+    </div>
+    <script>
+        
+         let add = document.getElementById('add');
+         add.addEventListener('click',function(){
+           if(document.getElementById('input_task').value!=""){
+
+             
+            let input_task= document.getElementById('input_task').value;
+            let p = document.createElement('p');
+            p.innerHTML='<span>'+input_task+'</span>'+'<button class="delete">click here to edit Edit</button>'+'<button class="Delete ">Delete this task</button>'
+             console.log(input_task);
+            console.log(p.children[2]);
+            document.getElementById('task-container').appendChild(p); 
+            p.children[2].addEventListener('click',function(){
+                 p.remove();
+                 console.log(p);
+
+             })
+             p.children[1].addEventListener('click',function(){
+                 p.children[0].style.backgroundColor="grey";
+                  p.children[0].contentEditable = true;
+                 console.log(p);
+             })
+             document.getElementById('input_task').value="";
+            }
+            else{
+                alert("please add a task");
+            }
+         })
+    </script>
+  </body>
+</html>
