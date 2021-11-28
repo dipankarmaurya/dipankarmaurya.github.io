@@ -26,7 +26,11 @@ addTaskButton.addEventListener("click", function (e) {
             '<div class="delete-task"></div>';
         
             //marking as done here 
+        
       let markAsDone = div.children[0].children[0];
+      div.addEventListener('click', () => {
+        div.children[0].children[1].contentEditable = true;
+      })
       console.log(markAsDone.done);
             markAsDone.addEventListener('click', function () {
             markAsDone.style.backgroundColor = "grey";
