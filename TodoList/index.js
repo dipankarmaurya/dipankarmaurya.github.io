@@ -29,7 +29,7 @@ addTaskButton.addEventListener("click", function (e) {
         
       let markAsDone = div.children[0].children[0];
       div.addEventListener('click', () => {
-        div.children[0].children[1].contentEditable = true;
+        div.children[0].children[1].contentEditable = true;'.'
       })
       console.log(markAsDone.done);
             markAsDone.addEventListener('click', function () {
