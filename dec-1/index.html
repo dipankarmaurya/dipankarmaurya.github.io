@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function fn() {
+        var c = document.getElementById("p1").value;
+        //  create element
+        var d = document.createElement("p");
+
+        d.append(c);
+
+        document.querySelector("div").appendChild(d);
+      }
+
+      function fn1() {
+        var e = document.getElementById("p1");
+
+        var f = document.querySelector("p");
+
+        f.parentElement.removeChild(f);
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <label>enter name</label>
+      <input type="text" value="" id="p1" />
+      <button onclick="fn()">adding elements</button>
+
+      <button onclick="fn1()">deletingelements</button>
+    </div>
+  </body>
+</html>
