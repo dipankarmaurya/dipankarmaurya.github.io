@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+    }
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<body>
+    <h1>Access data from Api</h1>
+    <div>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>year</th>
+                <th>color</th>
+            </tr>
+        </table>
+
+    </div>
+    <script>
+        let promiseData = fetch('https://reqres.in/api/user');
+
+        let objectData = promiseData.then(function (res) {
+            return res.json();
+        });
+
+        objectData.then(function (info) {
+            let arrayData = info.data;
+            for (let i = 0; i < arrayData.length; i++) {
+                let id = arrayData[i].id;
+                let name = arrayData[i].name;
+                let year = arrayData[i].year;
+                let color = arrayData[i].color;
+                let tb = document.querySelector('table');
+                let tr = document.createElement('tr');
+                tr.innerHTML = `<td>${id}</td><td>${name}</td><td>${year}</td><td>${color}</td>`;
+                tb.appendChild(tr);
+
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>
