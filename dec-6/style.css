@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+}
+
+.center{
+    background-color: grey;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(245, 89, 167, 0.151);
+}
+h2,h4{
+    font-family: 'Nunito', sans-serif;
+}
+.input-size{
+    height: 7vh;
+    width: 20vw;
+    margin-bottom: 1vh;
+    margin-right: 1vw;
+}
+.inline{
+    display: inline;
+}
+.dropdown{
+    width:20.7vw ;
+    height: 7.75vh;
+}
+.text-aria{
+    width: 42vw;
+    height: 10vh;
+}
+input,textarea{
+    border: 0.2px solid green;
+    outline: none;
+}
+input:hover,textarea:hover{
+    border: 2px solid green; 
+}
+.border-none{
+    border: none;
+}
+.btn{
+    width: 13vw;
+    font-size: medium;
+    font-weight: 600;
+    height: 6vh;
+    border-radius: 5px;
+}
+.btn-primary{
+  background-color: grey;
+}
+.btn-danger{
+    background-color: hotpink;
+}

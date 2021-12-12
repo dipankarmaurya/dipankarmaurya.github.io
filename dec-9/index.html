@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            height: 80vh;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        input{
+            height: 7vh;
+            width: 20vw;
+            margin-bottom: 5px;
+            outline: none;
+            border: 1px solid green;
+        }
+        button{
+            font-size: medium;
+            font-weight: bold;
+            padding: 1em;
+            margin-left: -17px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            border: 2px solid gray;
+            background-color: indianred;
+            color: khaki;
+        }
+        #output{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            color: white;
+            display: none;
+            margin-top: 40px;
+        }
+    </style>
+</head>  
+<body>
+    <div>
+    <input type="number" id="a" placeholder="enter value of a">
+    <input type="number" id="b" placeholder="enter value of b">
+    <input type="number" id="c"placeholder="enter value of c">
+    <button>click here to multiply abc </button>
+</div>
+<div id="output"></div>
+    <script>
+            
+          function multiply(a){
+            return  function xyz(b){
+                  return  function pqr(c){
+                       return a*b*c;
+                   }
+               }
+           }
+
+         document.querySelector('button').addEventListener('click',()=>{
+            let a = document.getElementById('a').value;
+            let b = document.getElementById('b').value;
+            let c = document.getElementById('c').value;
+             
+            let x= multiply(a)(b)(c);
+            console.log(x);
+             
+            let h1 = document.createElement('h1');
+            h1.innerText=x;
+            document.getElementById('output').appendChild(h1);
+            document.getElementById('output').style.display="flex";
+
+         })
+    </script>
+</body>
+</html>
