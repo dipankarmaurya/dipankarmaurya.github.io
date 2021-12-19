@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        p{
+            color: blue;
+            font-size: 2em;
+        }
+        #wrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+            height: 40vh;
+        }
+        #buttons{
+            width: 300px;
+            height: 150px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        #buttons button{
+            font-size: 1.4em;
+            width: 110px;
+            height: 40px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h2>setInterval</h2>
+    <div id="wrapper">
+        <p id="output">0</p>
+    <div id="buttons">
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+        <br><br>
+        <button id="restart">restart</button>
+        <button id="reset">reset</button>
+
+    </div>
+    </div>
+    <script>
+        let id;
+        let counter=0;
+
+
+             function start(){
+                 counter++;
+                 document.getElementById('output').innerText=counter;
+             }
+             document.getElementById('stop').addEventListener('click',()=>{
+                 clearInterval(id);
+             })
+             document.getElementById('reset').addEventListener('click',()=>{
+                counter=0;
+                document.getElementById('output').innerText=0;
+                clearInterval(id);
+            })
+
+              document.getElementById('restart').addEventListener('click',()=>{
+                 counter=0;
+                 id= setInterval(start,1000);
+            })
+           
+
+        document.getElementById('start').addEventListener('click',()=>{
+            id= setInterval(start,1000);
+        })
+
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse Number</title>
+  </head>
+  <body>
+    <input type="number" />
+    <button>getNumber</button>
+    <p id="ans"></p>
+
+    <script>
+
+        document.querySelector('button').addEventListener('click',()=>{
+              let n = document.querySelector('input').value;
+              let ans = reverseNumber(n);
+              ans = ans.join('');
+              document.getElementById('ans').append(ans)
+              document.querySelector('input').value="";  
+        })
+        function reverseNumber(n){
+            let arr = [];
+            while (n != 0) {
+                let dig = n % 10;
+                arr.push(dig);
+                n = Math.floor(n / 10);
+            }
+            return arr;
+        }
+      
+    </script>
+  </body>
+</html>
